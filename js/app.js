@@ -21,7 +21,7 @@ var Enemy = function(x, y) {
     this.x = x;
     this.y = y;
 
-    this.speed = Math.floor((Math.random() * 150) + (Math.random() * 150) + 50);
+    this.speed = Math.floor((Math.random() * 100) + (Math.random() * 110) + 100);
 };
 
 // Update the enemy's position, required method for game
@@ -36,7 +36,7 @@ Enemy.prototype.update = function(dt) {
         this.x = -2;
     }
 
-    if(player.x >= this.x -30 && player.x <= this.x + 30 && player.y >= this.y - 30 && player.y <= this.y + 30) {
+    if(player.x >= this.x -50 && player.x <= this.x + 50 && player.y >= this.y - 50 && player.y <= this.y + 50) {
         player.reset('YOU LOST, BETTER LUCK NEXT TIME!');
     }
 };
@@ -105,7 +105,7 @@ Player.prototype.reset = function(message) {
   var player = new Player();
 
 /** Array for enemy objects **/
-var allEnemies = [];
+var allEnemies = []; 
 
 (function addEnemies () {
 
