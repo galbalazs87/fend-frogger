@@ -36,7 +36,7 @@ Enemy.prototype.update = function(dt) {
         this.x = -2;
     }
 
-    if(player.x >= this.x -50 && player.x <= this.x + 50 && player.y >= this.y - 50 && player.y <= this.y + 50) {
+    if(player.x >= this.x - 75 && player.x <= this.x + 75 && player.y >= this.y - 75 && player.y <= this.y + 75) {
         player.reset('YOU LOST, BETTER LUCK NEXT TIME!');
     }
 };
@@ -105,17 +105,12 @@ Player.prototype.reset = function(message) {
   var player = new Player();
 
 /** Array for enemy objects **/
-var allEnemies = []; 
-
-(function addEnemies () {
-
-
-    allEnemies.push(new Enemy(-2, 60));
-    allEnemies.push(new Enemy(-2, 100));
-    allEnemies.push(new Enemy(-2,150));
-    allEnemies.push(new Enemy(-2,220));
-  }());
-
+const allEnemies = [
+  new Enemy(-2, 60),
+  new Enemy(-2, 100),
+  new Enemy(-2, 150),
+  new Enemy(-2, 220)
+];
 
 
 // This listens for key presses and sends the keys to your
